@@ -25,12 +25,21 @@ Blog.init({
     type: DataTypes.INTEGER,
     allowNull: true,
     defaultValue: 0,
+  },
+  yearWritten: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    validate: {
+      isAfter: "1990",
+      
+      isBefore: (new Date().getFullYear() + 1).toString()
+    }
   }
 },
   {
     sequelize,
     underscored: true,
-    timestamps: false,
+    timestamps: true,
     modelName: 'blog'
 });
 
