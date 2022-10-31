@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { tokenExtractor } = require('../util/middleware')
 const { Blog, User } = require('../models')
-const { Op, Sequelize } = require('sequelize')
+const { Op } = require('sequelize')
 
 
 router.get('/', async (req, res) => {
